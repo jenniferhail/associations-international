@@ -1,0 +1,51 @@
+ul {
+  padding: 0;
+  li {
+    position: relative;
+    padding: 0 0 0 15px;
+    list-style-type: none;  
+    &:before {
+      content: '\00b7'; 
+      position: absolute;
+      top: 12px;
+      left: 0;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 0px;
+      vertical-align: middle;
+    }
+  }
+}
+
+// ul,
+// ol {
+//   list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+//   li:before {
+//     content: none;
+//   }
+// }
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+// Remove default summary arrows for accordions
+summary {
+  list-style-image: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+  background: none;
+  color: transparent;
+}

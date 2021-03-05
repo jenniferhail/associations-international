@@ -1,0 +1,28 @@
+.layout.basic-content {
+    .wrapper {
+        max-width: 800px;
+    }
+    &.content-left {
+        text-align: left;
+    }
+    &.content-center {
+        text-align: center;
+    }
+    &.content-right {
+        text-align: right;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 10px;
+    }
+    ul, ol {
+        padding-left: 20px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    ul {
+        list-style: disc;
+    }
+    ol {
+        list-style: decimal;
+    }
+}

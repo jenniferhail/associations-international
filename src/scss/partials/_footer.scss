@@ -1,0 +1,25 @@
+footer {
+    @include disableLists();
+    padding: 30px 0;
+    background-color: $grey;
+    .wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        @media screen and ($tablet) {
+            display: block;
+        }
+    }
+    .logo {
+        display: inline-block;
+        width: 100%;
+        max-width: 120px;
+    }
+    .social-menu {
+        @media screen and ($tablet) {
+            margin-bottom: 15px;
+        }
+    }
+}

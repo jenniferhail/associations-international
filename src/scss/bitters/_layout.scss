@@ -1,0 +1,97 @@
+html {
+  background-color: $viewport-background-color;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// html,
+// body {
+//   height: 100%;
+// }
+
+body {
+  margin: 0;
+  &.front-end:not(.home) {
+    padding-top: 200px;
+  }
+  &.front-end.home {
+    @media screen and ($tablet) {
+      padding-top: 50px;
+    }
+  }
+}
+
+.wrapper,
+.wp-block-group__inner-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 30px;
+}
+.wp-block-group__inner-container {
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.visually-hidden,
+.visually-hide-label, 
+.visually-hide-text {
+    position: absolute;
+    right: 999999999px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.align-left,
+.text-align-left {
+  text-align: left;
+}
+.text-align-center,
+.align-center {
+  text-align: center;
+}
+.align-right,
+.text-align-right {
+  text-align: right;
+}
+.wp-block-image.is-resized {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.content-left .row {
+  flex-direction: row-reverse;
+}
+.content-right .row {
+  flex-direction: row;
+}
+
+.image-top-left {
+
+}
+.image-top-right {
+
+}
+.image-top-center {
+
+}
+.image-bottom-left {
+
+}
+.image-bottom-right {
+
+}
+.image-bottom-center {
+
+}
+.image-center {
+
+}

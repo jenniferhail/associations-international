@@ -1,0 +1,68 @@
+{
+    "key": "group_5ef20e426a1fa",
+    "title": "Post Type - Post",
+    "fields": [
+        {
+            "key": "field_5ef20e4fd6891",
+            "label": "Internal Author",
+            "name": "internal_author",
+            "type": "relationship",
+            "instructions": "If the author is a \"Person\" on this site, please pick them out here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "people"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5ef20e8ad6892",
+            "label": "External Author",
+            "name": "external_author",
+            "type": "text",
+            "instructions": "If the author is not a \"Person\" on this site, please enter the name here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1592923269
+}

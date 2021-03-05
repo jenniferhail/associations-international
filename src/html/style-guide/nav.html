@@ -1,0 +1,7 @@
+<nav id="style-guide-nav">
+	<ul>
+		<li v-for="layout in layouts">
+			<a v-bind:href="'#' + layout.id">{{layout.dataset.menutitle}}</a>
+		</li>
+	</ul>
+</nav>

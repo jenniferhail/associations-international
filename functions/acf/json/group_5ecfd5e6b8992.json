@@ -1,0 +1,50 @@
+{
+    "key": "group_5ecfd5e6b8992",
+    "title": "Settings - Heading Tag",
+    "fields": [
+        {
+            "key": "field_5ecfd5f022d07",
+            "label": "Heading Tag",
+            "name": "heading_tag",
+            "type": "button_group",
+            "instructions": "Choose the heading tag based on content hierarchy, not style. This will impact SEO.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "h1": "H1",
+                "h2": "H2",
+                "h3": "H3",
+                "h4": "H4",
+                "h5": "H5",
+                "h6": "H6"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1591032821
+}

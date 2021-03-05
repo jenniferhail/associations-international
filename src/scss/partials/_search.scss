@@ -1,0 +1,32 @@
+.search-results {
+    .facet-label {
+        margin-bottom: 4px;
+    }
+    .facetwp-facet {
+        margin-bottom: 20px;
+    }
+    .facetwp-facet-search_field {
+        .facetwp-search-wrap {
+            display: flex;
+        }
+        .facetwp-btn {
+            display: none;
+        }
+        input,
+        button {
+            height: 50px;
+        }
+    }
+    .search-filters {
+        display: flex;
+        justify-content: space-between;
+    }
+    .facetwp-facet-content_types {
+        display: flex;
+        .facetwp-radio {
+            &+.facetwp-radio {
+                margin-left: 20px;
+            }
+        }
+    }
+}

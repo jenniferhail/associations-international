@@ -1,0 +1,23 @@
+<section id="listing-post-grid" class="layout listing card-set grid" data-menutitle="Listing - Post">
+	<div class="wrapper">
+		<h2 class="title">Listing - Post</h2> <!-- Style guide title -->
+		<div class="deck-of-cards">
+			<div class="block-single-card post">
+				@include('listing-post-item.html')
+			</div>
+			<div class="block-single-card post">
+				@include('listing-post-item.html')
+			</div>
+			<div class="block-single-card post">
+				@include('listing-post-item.html')
+			</div>
+		</div>
+		<div class="pagination">
+			<div class="facetwp-pager">
+				<a class="facetwp-page first active" data-page="1">1</a>
+				<a class="facetwp-page last" data-page="2">2</a>
+				<a class="facetwp-page next" data-page="2">&gt;&gt;</a>
+			</div>
+		</div>
+	</div>
+</section>

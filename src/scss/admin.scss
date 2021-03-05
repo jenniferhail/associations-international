@@ -1,0 +1,546 @@
+$gap: 16px;
+
+.wp-block {
+    max-width: 1200px;
+}
+
+#editor { 
+  .editor-styles-wrapper {
+    ul, ol {
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
+  .wp-block {
+    &.has-child-selected {
+      .wp-block-group {
+        border: 1px dashed #c9c9c9;
+      }
+    }
+    .layout {
+      margin-bottom: 0;
+    }
+    .layout.gallery.logos.slider {
+      margin-bottom: 55px;
+    }
+  }
+  .wp-block-group {
+    border: 1px dashed #ffffff;
+    transition: border 300 ease-in-out;
+    &:hover,
+    &:focus {
+      border: 1px dashed #c9c9c9;
+    }
+  }
+  .block-single-card {
+    .wp-block-image {
+      > div,
+      .components-resizable-box__container {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+  }
+}
+
+// Editor Styles
+// Card Set
+#editor .layout.card-set .deck-of-cards {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-left: -22.5px;
+    margin-right: -22.5px;
+    @media screen and (max-width: 680px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    // Listing Cards
+    .block-single-card.post,
+    .block-single-card.people {
+      // Reset styles for Gutenberg
+      position: relative;
+      min-width: auto;
+      max-width: none;
+      margin-top: 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      // End reset styles for Gutenberg
+      align-self: stretch;
+      width: 100%;
+      min-height: 300px;
+      margin: 0 22.5px 45px;
+      flex: 0 0 calc(1 / 3 * 100% - 45px);
+      border: 2px solid #094056;
+      background-color: #fff;
+      @media screen and (max-width: 960px) {
+        flex: 0 0 calc(1 / 2 * 100% - 45px);
+      }
+      @media screen and (max-width: 680px) {
+        margin: 0 0 30px;
+        flex: 0 0 100%;
+      }
+      .wp-block-image {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 15px;
+        img {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+      }
+    }
+    .block-single-card.people {
+      .wp-block-image {
+        height: 320px;
+        border-bottom: #094056;
+      }
+    }
+    // Cards
+    > .block-editor-inner-blocks {
+        > .block-editor-block-list__layout {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-left: 0;
+            margin-right: 0;
+            > .wp-block {
+                // Reset styles for Gutenberg
+                position: relative;
+                min-width: auto;
+                max-width: none;
+                margin-top: 0;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+                background: transparent;
+                // End reset styles for Gutenberg
+                position: relative;
+                align-self: stretch;
+                width: 100%;
+                min-height: 300px;
+                margin: 0 22.5px 45px;
+                flex: 0 0 calc(1 / 3 * 100% - 45px);
+                @media screen and (max-width: 960px) {
+                    flex: 0 0 calc(1 / 2 * 100% - 45px);
+                }
+                @media screen and (max-width: 680px) {
+                    margin: 0 0 30px;
+                    flex: 0 0 100%;
+                }
+            }
+            .block-single-card {
+                margin: 0;
+            }
+        }
+    }
+}
+// Gravity Forms
+#editor .gform_wrapper {
+    // Resets
+    span.gform_description {
+      width: 100%;
+    }
+    img.gform_ajax_spinner {
+      display: none !important;
+    }
+    .gform_footer {
+      padding-top: 15px;
+      text-align: center;
+    }
+    .top_label div.ginput_container {
+      margin-top: 0;
+    }
+    .gfield_required {
+      color: #094056;
+    }
+    .field_description_below .gfield_description {
+      padding-top: 6px;
+    }
+    input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']) {
+      padding: 0.65em 0.8em 0.6em;
+    }
+    .gform_footer input.button, 
+    .gform_page_footer input.button, 
+    .gform_footer input[type=submit], 
+    .gform_page_footer input[type=submit] {
+      font-size: 24px;
+    }
+    // End Resets
+  
+    // Error Styling
+    div.validation_error {
+      color: #F53006;
+      font-size: 1em;
+      font-weight: 700;
+      margin-bottom: 0;
+      border-top: 2px solid #F53006;
+      border-bottom: 2px solid #F53006;
+      padding: 16px 0 16px 0;
+      clear: both;
+      width: 100%;
+      text-align: center;
+    }
+    .validation_message {
+      color: #F53006;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: normal;
+    }
+    .gfield_error .gfield_label {
+      color: #F53006;
+    }
+    li.gfield.gfield_error, 
+    li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+      border: none;
+      background: none;
+    }
+    li.gfield_error input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+    li.gfield_error textarea {
+      border: 2px solid #F53006;
+    }
+    &.gform_validation_error {
+      padding-top: 20px;
+    }
+    &.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+      @media only screen and (min-width: 641px) {
+        max-width: 100% !important;
+      }
+    }
+    // End Error Styling
+
+    // General Form Styling
+    form {
+        font-family: futura-pt, 'Trebuchet MS', Arial, sans-serif;
+        color: #094056;
+    }
+      fieldset {
+        background-color: transparent;
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+      legend {
+        font-weight: 600;
+        margin-bottom: .75em;
+        padding: 0;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: .75em;
+      }
+      input,
+      select,
+      textarea {
+        display: block;
+        // font-family: $base-font-family;
+        font-size: 16px;
+      }
+    [type=color], 
+    [type=date], 
+    [type=datetime-local], 
+    [type=datetime], 
+    [type=email], 
+    [type=month], 
+    [type=number], 
+    [type=password], 
+    [type=search], 
+    [type=tel], 
+    [type=text], 
+    [type=time], 
+    [type=url], 
+    [type=week], 
+    input:not([type]), 
+    textarea {
+        width: 100%;
+        margin-bottom: 1.5em;
+        padding: 0.5em;
+        
+        color: inherit;
+        background-color: inherit;
+        border: 2px solid #094056;
+        border-radius: 0;
+        box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+        box-sizing: border-box;
+        appearance: none;
+        transition: border-color 300ms ease-in-out;
+        &:hover {
+          border-color: shade(#094056, 20%);
+        }
+        &:focus {
+          border-color: #094056;
+          box-shadow: inset 0 1px 3px rgba(#000, 0.06), 0 0 5px rgba(#094056, 0.7);
+          outline: none;
+        }
+        &:disabled {
+          background-color: shade(#ffffff, 5%);
+          cursor: not-allowed;
+          &:hover {
+            border: 2px solid #094056;
+          }
+        }
+        &::placeholder {
+          color: tint(#094056, 60%);
+        }
+      }
+    
+      [type="range"] {
+        margin-bottom: .75em;
+      }
+      
+      textarea {
+        resize: vertical;
+      }
+      
+      [type="checkbox"],
+      [type="radio"] {
+        display: inline;
+        margin-right: .375em;
+      }
+      
+      [type="file"] {
+        margin-bottom: .75em;
+        width: 100%;
+      }
+      
+      select {
+        margin-bottom: .75em;
+        width: 100%;
+      }
+      
+      [type="checkbox"],
+      [type="radio"],
+      [type="file"],
+      select {
+        &:focus {
+          border-color: #094056;
+        //   box-shadow: inset 0 1px 3px rgba(#000, 0.06)-focus;
+          outline: none;
+        }
+      }
+      
+      input[type="search"] {
+        box-sizing: border-box;
+      }
+    
+      form input[type="submit"] {
+        position: relative;
+        display: inline-block;
+        min-width: 120px;
+        margin-bottom: 15px;
+        padding: 6px 16px 8px;
+      
+        font-family: futura-pt, 'Trebuchet MS', Arial, sans-serif;
+        font-size: 24px;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
+        text-decoration: none;
+        text-transform: lowercase;
+      
+        color: #094056;
+        background-color: #ffffff;
+        border: 2px solid #094056;
+        border-radius: 23.5px;
+      
+        transition: all 300ms ease-in-out;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        appearance: none;
+        box-sizing: content-box;
+        cursor: pointer;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 2px solid #094056;
+            border-radius: 23.5px;
+            background-color: transparent;
+            transform: translate3d(0,0,0);
+            transition: all 300ms ease-in-out;
+            z-index: -1;
+        }
+        &:hover:after {
+            border: 2px solid #F53006;
+            transform: translate3d(7px,7px,0);
+        }
+    
+        &:hover,
+        &:focus {
+          background-color: #094056;
+          color: #ffffff;
+          outline: none;
+        }
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.5;
+        }
+    }
+    // End General Form Styling
+}
+
+
+// The global margin gield group
+.acf-block-panel {
+
+    // Adjusting Relationship field to work within the block panel
+    .acf-relationship {
+        .filters.-f3 .filter,
+        .filters.-f3 .filter.-search {
+            width: 100%;
+            padding: 7px;
+        }
+        .selection .choices,
+        .selection .values {
+            width: 100%;
+        }
+        .selection .choices {
+            border-bottom: 2px solid #dfdfdf;
+        }
+
+    } 
+
+    // Adjusting repeater to work within the block panel
+    .acf-repeater {
+        &>table {
+            background: none;
+            border: none;
+        }
+        .acf-row {
+            display: block;
+            position: relative;
+            padding-top: 32px;
+        }
+        .acf-row-handle.order {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            padding: 0;
+            background: transparent;
+            border-bottom: 1px solid #e2e4e7;
+            height: auto;
+            text-align: left !important;
+            span {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin: 4px;
+                text-align: center;
+                text-color: #000;
+                border: 1px solid #000;
+                border-radius: 50%;
+            }
+        }
+        .acf-fields {
+            width: 100% !important;
+            border: none;
+        }
+        .acf-field {
+            margin-left: 0 !important;
+        }
+
+        .link-title,
+        .link-url {
+            display: block;
+            margin-left: 4px;
+            padding: 0;
+        }
+    }
+
+    // Adjusting gallery to work within the block panel
+    .acf-gallery-toolbar {
+        .acf-hl>li {
+            float: none;
+            margin-bottom: $gap;
+            &.acf-fr {
+                float: none;
+                margin-bottom: 0;
+            }
+        }
+        .acf-fr {
+            float: none;
+        }
+    }
+
+    // WYSIWYG
+    .acf-field-wysiwyg {
+      div.mce-edit-area {
+        padding: 10px;
+      }
+    }
+
+    .acf-fields {
+        .acf-field-group {
+            border-bottom: 1px solid #e2e4e7 !important;
+            padding-bottom: 16px !important;
+        }
+    }
+    .acf-field-5ed0123b5676d,
+    .acf-field-5ed26217ebf3b {
+
+        // Padding and margin
+        .acf-fields {
+            display: flex;
+            flex-wrap: wrap;
+
+            .acf-field {
+                margin-bottom: 16px;
+            }
+
+            &>.acf-field-number {
+                flex-basis: 21%;
+                width: 21% !important;
+                margin: 0;
+                margin-right: 2px;
+                border: 0;
+                &:nth-of-type(2) {
+                    margin-left: 16px;
+                }
+                &:last-of-type {
+                    margin-right: 16px;
+                }
+            }
+        }
+        // Unit
+        .acf-field-button-group {
+            flex-basis: 100%;
+            width: 100% !important;
+        }
+        
+    }
+
+    // Title group
+    .acf-field-5ecfd32e06aa7 {
+        .acf-fields {
+            .acf-field-button-group,
+            .acf-field-repeater {
+                // margin-left: 0;
+                // margin-right: 0;
+            }
+        }
+    }
+
+    .acf-fields {
+        &.-border {
+            margin-left: -16px;
+            margin-right: -16px;
+            border: none;
+        }
+    }
+}

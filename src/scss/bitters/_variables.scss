@@ -1,0 +1,67 @@
+// Base Settings
+
+// Breakpoints
+$laptop: "max-width: 1260px";
+$tablet: "max-width: 768px";
+$mobile-lg: "max-width: 640px";
+$mobile-sm: "max-width: 480px";
+
+// Typography
+$sans-serif: futura-pt, 'Trebuchet MS', Arial, sans-serif;
+$serif: baskerville-display-pt, 'Hoefler Text', Garamond, 'Times New Roman', serif;
+
+$base-font-family: $serif;
+$heading-font-family: $sans-serif;
+
+// Line height
+$base-line-height: 1.4;
+$heading-line-height: 1;
+
+// Font Weight
+$base-font-weight: 400;
+$heading-font-weight: 600;
+
+// Other Sizes
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+$bottom-margin: 80px;
+
+// Brand Colors
+$red: #F53006;
+$bg-green: #A2B526;
+$blue: #094056;
+$teal: #168367;
+$text-green: #95A625;
+$grey: #F6F6F6;
+$white: #ffffff;
+$transparent: rgba(255,255,255,0);
+
+// Font Colors
+$base-font-color: $blue;
+$action-color: $red;
+$video-color: $blue;
+$error-color: $red;
+
+// Border
+$base-border-radius: 0;
+$btn-border-radius: 23.5px;
+$base-border-color: $blue;
+$base-border: 2px solid $base-border-color;
+$border-blue: 2px solid $blue;
+$border-green: 2px solid $bg-green;
+$border-red: 2px solid $red;
+$border-white: 2px solid $white;
+
+// Background Colors
+$viewport-background-color: $white;
+
+// Focus
+$focus-outline-color: transparentize($base-font-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Transitions
+$base-duration: 300ms;
+$base-timing: ease-in-out;

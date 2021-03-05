@@ -1,0 +1,181 @@
+.notification.top {
+    + .skip-nav + .header {
+        top: 43px;
+    }
+    &.hide + .skip-nav + .header {
+        top: 0;
+    }
+}
+.logged-in {
+    .header,
+    .option.notification.top {
+        top: 32px;
+    }
+    .notification.top + .skip-nav + .header {
+        top: calc(32px + 43px);
+    }
+    .notification.top.hide + .skip-nav + .header {
+        top: 32px;
+    }
+}
+
+.home .header {
+    .logo {
+        max-width: 130px;
+        flex: 1 0 130px;
+        @media screen and ($tablet) {
+            max-width: 70px;
+        }
+        svg {
+            max-height: 118px;
+            @media screen and ($tablet) {
+                max-height: 64px;
+            }
+        }
+    }
+    &.scrolled {
+        .logo {
+            max-width: 50px;
+            @media screen and ($tablet) {
+                max-width: 40px;
+            }
+            svg {
+                max-height: 46px;
+                @media screen and ($tablet) {
+                    max-height: 34px;
+                }
+            }
+        }
+    }
+}
+
+.header {
+    @include disableLists;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: transparent;
+    transition: background-color $base-duration $base-timing;
+    .wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .logo {
+        display: inline-block;
+        width: 100%;
+        transition: max-width $base-duration $base-timing;
+        max-width: 50px;
+        @media screen and ($tablet) {
+            max-width: 40px;
+        }
+        svg {
+            display: block;
+            transition: max-height $base-duration $base-timing;
+            max-height: 46px;
+            @media screen and ($tablet) {
+                max-height: 34px;
+            }
+        }
+    }
+    &.scrolled {
+        background-color: $white;
+    }
+    .social-menu {
+        padding: 30px;
+    }
+    .header-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc((100vw - 1200px) / 2 + 280px);
+        height: 100vh;
+        padding-top: 120px;
+        padding-bottom: 80px;
+        overflow-y: scroll;
+        z-index: 4;
+        opacity: 0;
+        pointer-events: none;
+        background-color: $white;
+        border-left: 2px solid white;
+        transform: translateX(100%);
+        transition: transform 500ms $base-timing, opacity 0ms $base-timing 500ms;
+        @media screen and (max-width: 1199px) {
+            width: 280px;
+        }
+        @media screen and ($mobile-sm) {
+            width: 100%;
+        }
+    }
+}
+.header.active {
+    .header-nav {
+        opacity: 1;
+        pointer-events: visible;
+        border-left: $base-border;
+        transform: translateX(0);
+        transition: transform 500ms $base-timing, opacity 0ms $base-timing;
+    }
+}
+// Hamburger Menu
+.nav-toggle {
+    margin: 0 0 0 auto;
+    padding: 5px 0;
+    z-index: 5;
+    border: none;
+    background-color: transparent;
+    @include heading-style(22px, $h6-line-height);
+    &:after {
+        content: '';
+        display: block;
+        width: 44px;
+        height: 2px;
+        margin: 0 auto;
+        background-color: $blue;
+    }
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+    &:focus {
+        outline: $focus-outline;
+        outline-offset: $focus-outline-offset;
+    }
+    // .toggle-wrapper {
+    //     display: block;
+    //     width: 32px;
+    //     height: 20px;
+    //     position: relative;
+    //     transform: rotate(0deg);
+    //     transition: .5s ease-in-out;
+    //     cursor: pointer;
+    // }
+    // .toggle-bar {
+    //     display: block;
+    //     position: absolute;
+    //     height: 2px;
+    //     width: 100%;
+    //     background-color: $blue;
+    //     border-radius: 50px;
+    //     opacity: 1;
+    //     left: 0;
+    //     transform: rotate(0deg);
+    //     transition: .25s ease-in-out;
+    // }
+    // .toggle-bar-1 {
+    //     top: 0px;
+    // }
+    // .toggle-bar-2, 
+    // .toggle-bar-3 {
+    //     top: 50%;
+    //     transform: translateY(-50%);
+    // }
+    // .toggle-bar-4 {
+    //     bottom: 0;
+    // }
+}

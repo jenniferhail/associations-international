@@ -1,0 +1,41 @@
+.layout {
+	.component.intro {
+		&.text-align-center {
+			.wrapper {
+				
+			}
+		}
+		.label {
+			margin-bottom: 10px;
+			font-family: $sans-serif;
+			font-weight: 500;
+			color: $text-green;
+		}
+		.title {
+			@include heading-style($h2-font-size, $h2-line-height);
+		}
+		.subtitle {
+			padding: 0;
+		}
+	}
+}
+// WP Intro - using a custom class
+.intro {
+	.wp-block-group__inner-container {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+}
+
+.front-end.error404 {
+	display: flex;
+    flex-direction: column;
+	height: 100vh;
+	main {
+		flex: 1 0 0;
+		padding-bottom: 80px;
+	}
+	.btn {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,48 @@
+@mixin btnHover($color, $hover-color, $border-radius, $distance: 7px) {
+    &:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 2px solid $color;
+        border-radius: $border-radius;
+        background-color: $transparent;
+        transform: translate3d(0,0,0);
+        transition: all $base-duration $base-timing;
+        z-index: -1;
+    }
+    &:hover:after {
+        border: 2px solid $hover-color;
+        transform: translate3d($distance,$distance,0);
+    }
+}
+
+@mixin hoverEl() {
+    position: relative;
+    background-color: $white;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 2px solid $transparent;
+        border-radius: 0;
+        background-color: $transparent;
+        transform: translate3d(0,0,0);
+        transition: all $base-duration $base-timing;
+        z-index: -1;
+    }
+}
+
+@mixin hoverState($color, $distance: 7px) {
+    &:after {
+        border: 2px solid $color;
+        transform: translate3d($distance, $distance, 0);
+    }
+}

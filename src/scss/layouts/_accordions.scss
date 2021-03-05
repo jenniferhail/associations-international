@@ -1,0 +1,244 @@
+.layout.accordion {
+    .wrapper {
+        max-width: 1000px;
+    }
+    // Accordion item styling
+    details > summary::-webkit-details-marker {
+		display: none;
+    }
+    &.list-view {
+        .col.accordion-menus {
+			display: none;
+		}
+        .accordion-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 5px 10px;
+            border: $border-blue;
+        }
+        .accordion-title {
+            color: $text-green;
+            font-family: $sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            &:before,
+            &:after {
+                position: absolute;
+                transform: rotate(0);
+                transition: transform $base-duration $base-timing, border $base-duration $base-timing;
+            }
+            &:before {
+                top: 10px;
+                right: 10px;
+                @include triangle(right, $blue, $size: 18px);
+            }
+            &:after {
+                top: 13px;
+                right: 14px;
+                @include triangle(right, $white, $size: 12px);
+            }
+            &:hover,
+            &:focus {
+                &:after {
+                    @include triangle(right, $blue, $size: 12px);
+                }
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        .accordion-item.active {
+			.accordion-title {
+                &:before,
+                &:after {
+                    transform: rotate(90deg);
+                    transition: transform $base-duration $base-timing;
+                }
+                &:after {
+                    @include triangle(right, $blue, $size: 12px);
+                    transform: rotate(90deg);
+                }
+            }
+		}
+        .accordion-content {
+            display: none;
+			padding: 30px 80px;
+			@media screen and ($tablet) {
+				padding: 15px;
+			}
+			@media screen and ($mobile-lg) {
+				padding: 10px 0 0;
+			}
+        }
+    }
+    // I need to clean up the code below
+    &.tab-view {
+		.row {
+			@media screen and (min-width: 860px) {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+			}
+			.col {
+				@media screen and (min-width: 860px) {
+					flex: 1 0 50%;
+				}
+				&:first-child {
+					display: none;
+					@media screen and (min-width: 860px) {
+						display: block;
+					}
+				}
+				&:last-child {
+					@media screen and (min-width: 860px) {
+						padding-top: 45px;
+					}
+				}
+			}
+		}
+		.accordion-menus {
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+		.accordion-title {
+			display: inline-block;
+			margin-right: 30px;
+			margin-bottom: 0;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			color: $blue;
+			transition: color $base-duration $base-timing;
+			flex: 0 0 auto;
+			order: 1;
+			&:hover,
+			&.active {
+				color: $blue;
+			}
+			&:first-child {
+				padding-right: 30px;
+				border-right: 1px solid $blue;
+			}
+		}
+		.accordion-menu {
+			position: absolute;
+			top: auto;
+			left: 0;
+			padding-top: 30px;
+			opacity: 0;
+			z-index: -1;
+			flex: 1 0 100%;
+			order: 2;
+			@media screen and (max-width: 859px) {
+				display: none;
+			}
+			&.active {
+				position: relative;
+				opacity: 1;
+				z-index: 1;
+			}
+			.accordion-nav-item {
+				margin-bottom: 10px;
+				a {
+					color: $base-font-color;
+					&:hover {
+						color: $blue;
+					}
+				}
+				&.active a {
+					color: $blue;
+				}
+			}
+		}
+		.accordion-menu,
+		.accordion-groups {
+			@media screen and (min-width: 860px) {
+				border-top: 1px solid $blue;
+			}
+		}
+		.accordion-groups {
+			position: relative;
+			@media screen and (min-width: 860px) {
+				padding-top: 35px;
+			}
+		}
+		.accordion-group {
+			@media screen and (min-width: 860px) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				padding-bottom: 30px;
+			}
+			&.active {
+				@media screen and (min-width: 860px) {
+					position: relative;
+					opacity: 1;
+					z-index: 1;
+				}
+			}
+			summary {
+				@media screen and (max-width: 859px) {
+					position: relative;
+					padding: 10px 0 3px;
+				    margin-bottom: 0;
+				    border-bottom: 1px solid $text-green;
+					font-family: $base-font-family;
+					color: $text-green;
+					cursor: pointer;
+					&:after {
+						position: absolute;
+						right: 15px;
+						display: inline-block;
+						font-style: normal;
+						font-variant: normal;
+						text-rendering: auto;
+						font-weight: 300;
+						font-family: 'Font Awesome 5 Regular';
+						-webkit-font-smoothing: antialiased;
+						content: "\f067";
+						transition: all $base-duration $base-timing;
+					}
+				}
+				@media screen and (min-width: 860px) {
+					font-size: 40px;
+					line-height: 1.1;
+					font-family: $heading-font-family;
+					color: $blue;
+				}
+			}
+			details {
+				@media screen and (min-width: 860px) {
+					position: absolute;
+					top: 0;
+					left: 0;
+					opacity: 0;
+					z-index: 0;
+					transition: opacity $base-duration $base-timing;
+				}
+				&.active {
+					@media screen and (min-width: 860px) {
+						position: relative;
+						opacity: 1;
+						z-index: 1;
+						transition: opacity $base-duration $base-timing;
+					}
+				}
+			}
+		}
+		.accordion-item.active {
+			summary:after {
+				@media screen and (max-width: 859px) {
+					transform: rotate(45deg);
+				}
+			}
+		}
+		.accordion-content {
+			@media screen and (max-width: 859px) {
+				display: none;
+			}
+		}
+	}
+}

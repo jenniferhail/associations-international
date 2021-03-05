@@ -1,0 +1,81 @@
+.option.notification {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: $base-font-color;
+    transform: translate3d(0, 0, 0);
+    font-family: $sans-serif;
+    font-weight: 600;
+    background-color: $bg-green;
+    transition: all $base-duration $base-timing;
+    z-index: 9999;
+    .wrapper {
+        padding: 9px 30px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    a {
+        text-decoration: underline;
+    }
+    &.hide {
+        display: none;
+    }
+    &.top {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    &.bottom {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        .wrapper {
+            padding: 15px 30px;
+        }
+    }
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 12px;
+        background: transparent;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+        .toggle-wrapper {
+            display: block;
+            width: 18px;
+            height: 18px;
+            margin: 0 auto;
+            position: relative;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out;
+            cursor: pointer;
+        }
+        .toggle-bar {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background-color: $blue;
+            border-radius: 50px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        .toggle-bar-1,
+        .toggle-bar-2 {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .toggle-bar-1 {
+            transform: rotate(45deg);
+        }
+        .toggle-bar-2 {
+            transform: rotate(-45deg);
+        }
+    }
+}

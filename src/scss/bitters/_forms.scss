@@ -1,0 +1,283 @@
+$_form-background-color: #fff;
+$_form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$_form-box-shadow-focus: $_form-box-shadow, 0 0 5px rgba($base-border-color, 0.7);
+
+.front-end {
+  form {
+    font-family: $sans-serif;
+    color: $base-font-color;
+  }
+  
+  fieldset {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  legend {
+    font-weight: 600;
+    margin-bottom: $small-spacing / 2;
+    padding: 0;
+  }
+  
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: $small-spacing / 2;
+  }
+  
+  input,
+  select,
+  textarea {
+    display: block;
+    // font-family: $base-font-family;
+    font-size: 16px;
+  }
+  
+  #{$all-text-inputs} {
+    width: 100%;
+    margin-bottom: $small-spacing;
+    padding: $base-spacing / 3;
+    
+    color: inherit;
+    background-color: inherit; // $_form-background-color
+    border: $base-border;
+    border-radius: $base-border-radius;
+    box-shadow: $_form-box-shadow;
+    box-sizing: border-box;
+    appearance: none;
+    transition: border-color $base-duration $base-timing;
+    &:hover {
+      border-color: shade($base-border-color, 20%);
+    }
+    &:focus {
+      border-color: $base-border-color;
+      box-shadow: $_form-box-shadow-focus;
+      outline: none;
+    }
+    &:disabled {
+      background-color: shade($_form-background-color, 5%);
+      cursor: not-allowed;
+      &:hover {
+        border: $base-border;
+      }
+    }
+    &::placeholder {
+      color: tint($base-font-color, 60%);
+    }
+  }
+
+  [type="range"] {
+    margin-bottom: $small-spacing;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  [type="checkbox"],
+  [type="radio"] {
+    display: inline;
+    margin-right: $small-spacing / 2;
+  }
+  
+  [type="file"] {
+    margin-bottom: $small-spacing;
+    width: 100%;
+  }
+  
+  select {
+    margin-bottom: $small-spacing;
+    // width: 100%;
+  }
+  
+  [type="checkbox"],
+  [type="radio"],
+  [type="file"],
+  select {
+    &:focus {
+      border-color: $base-border-color;
+      box-shadow: $_form-box-shadow-focus;
+      outline: none;
+    }
+  }
+  
+  input[type="search"] {
+    box-sizing: border-box;
+  }
+
+  form input[type="submit"] {
+    position: relative;
+    display: inline-block;
+    min-width: 120px;
+    margin-bottom: 15px;
+    padding: 6px 16px 8px;
+  
+    font-family: $sans-serif;
+    font-size: 24px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+  
+    color: $btn-text-color;
+    background-color: $btn-bg-color;
+    border: $border-blue;
+    border-radius: $btn-border-radius;
+  
+    transition: all $base-duration $base-timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    appearance: none;
+    box-sizing: content-box;
+    cursor: pointer;
+    @include btnHover($blue, $red, $btn-border-radius, 7px);
+
+    &:hover,
+    &:focus {
+      background-color: $btn-text-color;
+      color: $btn-text-color-hover;
+      outline: none;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
+
+// Gravity Forms
+.front-end .gform_wrapper {
+  // Resets
+  ul, ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+    li {
+      padding: 0;
+      &:before {
+        content: none;
+      }
+    }
+  }
+  span.gform_description {
+    width: 100%;
+  }
+  img.gform_ajax_spinner {
+    display: none !important;
+  }
+  .gform_footer {
+    padding-top: 15px;
+    text-align: center;
+  }
+  .top_label div.ginput_container {
+    margin-top: 0;
+  }
+  .gfield_required {
+    color: $base-font-color;
+  }
+  .field_description_below .gfield_description {
+    padding-top: 6px;
+  }
+  input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']) {
+    padding: 0.65em 0.8em 0.6em;
+  }
+  .gform_footer input.button, 
+  .gform_page_footer input.button, 
+  .gform_footer input[type=submit], 
+  .gform_page_footer input[type=submit] {
+    font-size: 24px;
+  }
+  // End Resets
+
+  // Error Styling
+  div.validation_error {
+    color: $error-color;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 0;
+    border-top: 2px solid $error-color;
+    border-bottom: 2px solid $error-color;
+    padding: 16px 0 16px 0;
+    clear: both;
+    width: 100%;
+    text-align: center;
+  }
+  .validation_message {
+    color: $error-color;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: normal;
+  }
+  .gfield_error .gfield_label {
+    color: $error-color;
+  }
+  li.gfield.gfield_error, 
+  li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    border: none;
+    background: none;
+  }
+  li.gfield_error input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+  li.gfield_error textarea {
+    border: 2px solid $error-color;
+  }
+  &.gform_validation_error {
+    padding-top: 20px;
+  }
+  &.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+    @media only screen and (min-width: 641px) {
+      max-width: 100% !important;
+    }
+  }
+  // End Error Styling
+}
+
+
+// Gravity Forms
+// body .gform_wrapper {
+//   max-width: 600px;
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   h3.gform_title {
+//     margin-bottom: 30px;
+//   }
+//   .gform_heading {
+//     margin-bottom: 30px;
+//     text-align: center;
+//   }
+//   .top_label div.ginput_container {
+//     margin-top: 0 !important;
+//   }
+//   legend.gfield_label, .top_label .gfield_label {
+//     line-height: 1.5;
+//   }
+//   ul li.gfield {
+//     position: relative;
+//     margin-top: 0 !important;
+//     margin-bottom: 1em;
+//     padding-top: 20px !important;
+//     label {
+//       position: absolute;
+//       left: 0.8em;
+//       top: 28px;
+//       color: $dark-gray;
+//       font-weight: 500;
+//       line-height: 1.5;
+//       transition: all 300ms ease-out;
+//     }
+//     &.active {
+//       label {
+//         top: -7px;
+//         transform: scale(0.7);
+//         transform-origin: left;
+//         color: $offwhite;
+//       }
+//     }
+//   }
+
+// }

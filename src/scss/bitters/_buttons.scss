@@ -1,0 +1,118 @@
+$btn-bg-color: $white;
+$btn-text-color: $blue;
+$btn-text-color-hover: $white;
+
+// General Buttons
+// .layout {
+//   #{$all-buttons},
+// }
+
+// Theme buttons
+.layout {
+  .buttons,
+  .wp-block-button {
+    position: relative;
+    padding-top: 20px;
+    z-index: 1;
+  }
+  p + {
+    .buttons,
+    .wp-block-button {
+      padding-top: 0; // Top padding for buttons under paragraphs
+    }
+  }
+  .buttons .btn,
+  .wp-block-button__link,
+  input[type="submit"],
+  input[type="reset"] {
+    position: relative;
+    display: inline-block;
+    min-width: 120px;
+    margin-bottom: 15px;
+    padding: 6px 16px 8px;
+  
+    font-family: $sans-serif;
+    font-size: 24px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+  
+    color: $btn-text-color;
+    background-color: $btn-bg-color;
+    border: $border-blue;
+    border-radius: $btn-border-radius;
+  
+    transition: all $base-duration $base-timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    appearance: none;
+    box-sizing: content-box;
+    cursor: pointer;
+    @include btnHover($blue, $red, $btn-border-radius, 7px);
+
+    &:hover,
+    &:focus {
+      background-color: $btn-text-color;
+      color: $btn-text-color-hover;
+      outline: none;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+    + * {
+      margin-left: 10px;
+    }
+  }
+}
+
+.front-end .layout:not(.hero) form {
+  #{$all-buttons} {
+    position: relative;
+    display: inline-block;
+    min-width: 120px;
+    margin-bottom: 15px;
+    padding: 6px 16px 8px;
+  
+    font-family: $sans-serif;
+    font-size: 24px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+  
+    color: $btn-text-color;
+    background-color: $btn-bg-color;
+    border: $border-blue;
+    border-radius: $btn-border-radius;
+  
+    transition: all $base-duration $base-timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    appearance: none;
+    box-sizing: content-box;
+    cursor: pointer;
+    @include btnHover($blue, $red, $btn-border-radius, 7px);
+
+    &:hover,
+    &:focus {
+      background-color: $btn-text-color;
+      color: $btn-text-color-hover;
+      outline: none;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+    + * {
+      margin-left: 10px;
+    }
+  }
+}

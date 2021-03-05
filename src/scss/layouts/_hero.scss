@@ -1,0 +1,433 @@
+.layout.hero {
+    position: relative;
+    &.content-left {
+        .content {
+            padding-left: 0;
+            padding-right: 80px;
+            @media screen and ($tablet) {
+                padding-right: 0;
+            }
+        }
+        .image {
+            margin-right: auto;
+        }
+    }
+    &.content-right {
+        .content {
+            padding-left: 80px;
+            padding-right: 0;
+            @media screen and ($tablet) {
+                padding-left: 0;
+            }
+        }
+        .image {
+            margin-left: auto;
+        }
+    }
+    &.content-center {
+        // Nothing to do with this yet
+    }
+    .row {
+        display: flex;
+        align-items: center;
+        @media screen and ($tablet) {
+            display: block;
+        }
+    }
+    .col {
+        flex: 1 0 50%;
+        display: block;
+    }
+    .image {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0;
+            padding-top: 68.25%;
+        }
+    }
+    .label,
+    .title,
+    .subtitle,
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 5px;
+    }
+    .content {
+        position: relative;
+        padding: 40px 0;
+        z-index: 1;
+        text-align: left; 
+        @media screen and ($tablet) {
+            padding: 20px 0;
+        }
+        .buttons,
+        .wp-block-button {
+            padding-top: 20px;
+            @media screen and ($tablet) {
+                padding-top: 10px;
+            }
+        }
+        p {
+            @media screen and ($tablet) {
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    &.style-1 {
+        .col {
+            position: relative;
+            overflow: visible;
+        }
+        .icon {
+            @media screen and ($tablet) {
+                padding-top: 0.5%;
+            }
+            .image {
+                position: relative;
+                z-index: 2;
+                margin-top: 12.75%;
+                margin-bottom: 12.75%;
+                @media screen and ($tablet) {
+                    margin-top: 11.75%;
+                    margin-bottom: 0;
+                }
+            }
+            .video {
+                position: relative;
+                z-index: 2;
+                margin-top: 22%;
+                margin-bottom: 22%;
+                @media screen and ($tablet) {
+                    margin-top: 23.75%;
+                    margin-bottom: 0;
+                }
+            }
+            .svg {
+                position: absolute;
+                top: 0;
+                width: calc(100% - 10%);
+                height: auto;
+                z-index: 1;
+                @media screen and ($tablet) {
+                    width: calc(100% - 20%);
+                }
+            }
+        }
+        &.content-left {
+            .svg {
+                left: 35%;
+            }
+        }
+        &.content-right {
+            .svg {
+                right: 35%;
+            }
+        }
+    }
+    &.style-2 {
+        margin-bottom: 10px;
+        padding-top: 60px;
+        padding-right: 8px;
+        padding-left: 8px;
+        background-color: $grey;
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 60px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $white;
+            z-index: 1;
+            @media screen and ($tablet) {
+                height: 40px;
+            }
+        }
+        &.content-center {
+            .content {
+                @media screen and ($tablet) {
+                    padding: 0 0 20px;
+                }
+            }
+        }
+        .wrapper,
+        .wp-block-group__inner-container {
+            position: relative;
+            padding: 120px;
+            @media screen and ($tablet) {
+                padding: 30px 60px 40px;
+            }
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                width: calc(100% - 60px);
+                height: 100%;
+                position: absolute;
+                z-index: 2;
+            }
+            &:before {
+                top: -8px;
+                left: calc(-8px + 30px);
+                border: $border-blue;
+            }
+            &:after {
+                bottom: -8px;
+                right: calc(-8px + 30px);
+                border: $border-green;
+            }
+        }
+        .row {
+            position: relative;
+            z-index: 3;
+        }
+        .buttons .btn,
+        .wp-block-button__link {
+            background-color: $grey;
+            &:hover,
+            &:focus {
+                background-color: $btn-text-color;
+            }
+        }
+    }
+    &.style-3 {
+        z-index: 4;
+        opacity: 0;
+        overflow: hidden;
+        .wrapper {
+            max-width: none;
+            padding: 0 0 30px;
+        }
+        &.content-left {
+            .image-wrapper {
+                margin-left: auto;
+                margin-right: -45px;
+                @media screen and ($tablet) {
+                    margin-left: 42%;
+                }
+            }
+            .circle {
+                &.front {
+                    top: 63%;
+                    left: calc(50% - 3%);
+                    transform: translate(-50%, -50%);
+                    padding-top: 50px;
+                    padding-left: 50px;
+                    @media screen and ($tablet) {
+                        top: 65%;
+                        left: calc(50% - 12%);
+                        padding: 0;
+                    }
+                }
+                &.back {
+                    top: 62%;
+                    left: calc(50% - 6%);
+                    transform: translate(-50%, -50%);
+                    @media screen and ($tablet) {
+                        width: 52vw;
+                        top: 65%;
+                        left: calc(50% - 12% - 3%);
+                    }
+                }
+                .green {
+                    transform: rotate(40deg);
+                    &:after {
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+        &.content-right {
+            .image-wrapper {
+                margin-right: auto;
+                width: 60vw;
+                @media screen and ($tablet) {
+                    width: 100vw;
+                    margin-left: -16%;
+                }
+            }
+            .circle {
+                &.front {
+                    top: 55%;
+                    right: calc(50% - 2%);
+                    transform: translate(50%, -50%);
+                    padding-bottom: 50px;
+                    padding-right: 50px;
+                    @media screen and ($tablet) {
+                        top: 45%;
+                        right: calc(50% - 12% - 2%);
+                        padding: 0;
+                    }
+                }
+                &.back {
+                    top: 50%;
+                    right: calc(50% - 2%);
+                    transform: translate(50%, -50%);
+                    @media screen and ($tablet) {
+                        width: 52vw;
+                        top: 45%;
+                        right: calc(50% - 12% - 5%);
+                    }
+                }
+                .green {
+                    transform: rotate(12deg);
+                    &:after {
+                        right: 0;
+                        transform: translate(50%, -50%);
+                    }
+                }
+            }
+            // h1, h2, h3, h4, h5, h6 {
+            //     font-size: 3.5vw; // 2.1vw, 2.4vw, 47px
+            //     @media screen and ($tablet) {
+            //         font-size: 7.55vw; // 4.55vw
+            //     }
+            // }
+        }
+        #lottie {
+            overflow: hidden;
+            transform: translate3d(0,0,0);
+            text-align: center;
+            opacity: 1;
+        }
+        .image-wrapper {
+            z-index: 2;
+            position: relative;
+            width: 50vw;
+            height: 100%;
+            min-height: 50vw;
+            @media screen and ($tablet) {
+                width: 92vw;
+            }
+            .image {
+                height: 0;
+                padding-bottom: 105%;
+            }
+        }
+        .svg-circle {
+            padding: 6px;
+        }
+        .circle {
+            position: absolute;
+            &.front {
+                z-index: 3;
+                width: 30vw;
+                @media screen and ($tablet) {
+                    width: 50vw;
+                }
+            }
+            &.back {
+                z-index: 1;
+                width: 38vw;
+                @media screen and ($tablet) {
+                    width: 52vw;
+                }
+            }
+            .red {
+                position: relative;
+                width: 100%;
+                padding-bottom: 100%;
+                border-radius: 100%;
+                background-color: $red;
+                color: $white;
+            }
+            .blue {
+                width: 100%;
+                position: absolute;
+                z-index: -1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 100%;
+                border: $border-blue;
+                @media screen and ($tablet) {
+                    border: 1px solid $blue;
+                }
+                .svg {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .green {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                &:after {
+                    @include circle(18%, 18%, 20%, 20%);
+                    position: absolute;
+                    top: 50%;
+                    background-color: $bg-green;
+                }
+            }
+        }
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            transform: translate(-50%, -50%) scale(1);
+            transform-origin: center center;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1;
+            font-size: 2.1vw;
+            transform: scale(1);
+            @media screen and ($tablet) {
+                transform: scale(1);
+            }
+        }
+        .btn {
+            min-width: auto;
+            margin: 0;
+            padding: 6px 26px 8px;
+            color: $white;
+            border: $border-white;
+            background-color: inherit;
+
+            font-size: 1.75vw;
+            line-height: 0.9;
+            @media screen and ($tablet) {
+                font-size: 4vw;
+            }
+            
+            @include btnHover($white, $white, $btn-border-radius, 7px);
+            &:hover,
+            &:focus {
+                background-color: $white;
+                color: $blue;
+            }
+            &:disabled {
+                cursor: not-allowed;
+                opacity: 0.5;
+            }
+            + .btn {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+// Styling the new headline - August 6, 2020
+#layout-block_5eebcd5e6e984 {
+    h2 {
+        position: relative;
+        left: 20px;
+        line-height: 1.1;
+        margin-bottom: 0;
+        @media screen and (min-width: 1200px) {
+            left: 30px;
+        }
+    }
+}
